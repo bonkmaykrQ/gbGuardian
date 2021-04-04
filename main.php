@@ -44,7 +44,7 @@ if (file_exists($configpath .= "_p_saved_subtitle")) {
 
     if ($read_processingthis == "") {
         /*$guardSubTitle .= "pickle is lonely :(";*/
-        $guardTitle .= $read_processingthis;
+        $guardSubTitle .= $read_processingthis;
     } else {
         $guardSubTitle .= $read_processingthis;
     }
@@ -53,10 +53,15 @@ if (file_exists($configpath .= "_p_saved_subtitle")) {
 }
 ?>
 <head>
+    <!--<style>
+    script {
+        display: block;
+    }
+    </style>-->
 </head>
 
 <module class="PageModule bmGuardian">
-    <h3 class="bmGuardianTitle"><?php echo $guardTitle;?></h3>
+    <h2 class="bmGuardianTitle"><?php echo $guardTitle;?></h2>
     <div class="<?php echo $classesOutput;?>Content" style="display:block;justify-content:center;align-items:center;">
         <h4 style="font-size: 16px;" class="bmGuardianSubTitle"><?php echo $guardSubTitle;?></h4>
         <img src="<?php echo $mp3path;?>" width="100%"></img>

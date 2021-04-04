@@ -44,11 +44,48 @@ $configstream = fopen ($configpath, "w");
 fwrite($configstream, $mp3path);
 fclose($configstream);
 
+$mp3path = str_replace("&lt;", "<", $mp3path);
+$mp3path = str_replace("&gt;", ">", $mp3path);
+$mp3path = str_replace("&quot;", "\"", $mp3path);
+
+$guardTitle = str_replace("&lt;", "<", $guardTitle);
+$guardTitle = str_replace("&gt;", ">", $guardTitle);
+$guardTitle = str_replace("&quot;", "\"", $guardTitle);
+
+$guardSubTitle = str_replace("&lt;", "<", $guardSubTitle);
+$guardSubTitle = str_replace("&gt;", ">", $guardSubTitle);
+$guardSubTitle = str_replace("&quot;", "\"", $guardSubTitle);
+
+$mp3path = str_replace("<style>", "&lt;style&gt;", $mp3path);
+$mp3path = str_replace("</style>", "&lt;/style&gt;", $mp3path);
+$mp3path = str_replace("<script>", "&lt;script&gt;", $mp3path);
+$mp3path = str_replace("</script>", "&lt;/script&gt;", $mp3path);
+$mp3path = str_replace("<?php", "&lt;?php", $mp3path);
+$mp3path = str_replace("?>", "?&gt;", $mp3path);
 $configpath = $currentuserid;
 $configstream = fopen ($configpath .= "_p_saved_title", "w");
 fwrite($configstream, $p_saved_title);
 fclose($configstream);
 
+/*$p_saved_title = str_replace("<style>", "<script type=\"text/plain\"><i>&lt;style&gt;</i></script>", $p_saved_title);*/
+$p_saved_title = str_replace("<style>", "&lt;style&gt;", $p_saved_title);
+$p_saved_title = str_replace("</style>", "&lt;/style&gt;", $p_saved_title);
+$p_saved_title = str_replace("<script>", "&lt;script&gt;", $p_saved_title);
+$p_saved_title = str_replace("</script>", "&lt;/script&gt;", $p_saved_title);
+$p_saved_title = str_replace("<?php", "&lt;?php", $p_saved_title);
+$p_saved_title = str_replace("?>", "?&gt;", $p_saved_title);
+$configpath = $currentuserid;
+$configstream = fopen ($configpath .= "_p_saved_title", "w");
+fwrite($configstream, $p_saved_title);
+fclose($configstream);
+
+/*$p_saved_subtitle = str_replace("<style>", "<script type=\"text/plain\"><i>&lt;style&gt;</i></script>", $p_saved_subtitle);*/
+$p_saved_subtitle = str_replace("<style>", "&lt;style&gt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("</style>", "&lt;/style&gt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("<script>", "&lt;script&gt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("</script>", "&lt;/script&gt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("<?php", "&lt;?php", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("?>", "?&gt;", $p_saved_subtitle);
 $configpath = $currentuserid;
 $configstream = fopen ($configpath .= "_p_saved_subtitle", "w");
 fwrite($configstream, $p_saved_subtitle);

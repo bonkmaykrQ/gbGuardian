@@ -31,6 +31,18 @@ if (file_exists($configpath .= "_p_saved_subtitle")) {
 } else {
     $p_saved_subtitle = "";
 }
+
+$mp3path = str_replace("<", "&lt;", $mp3path);
+$mp3path = str_replace(">", "&gt;", $mp3path);
+$mp3path = str_replace("\"", "&quot;", $mp3path);
+
+$p_saved_title = str_replace("<", "&lt;", $p_saved_title);
+$p_saved_title = str_replace(">", "&gt;", $p_saved_title);
+$p_saved_title = str_replace("\"", "&quot;", $p_saved_title);
+
+$p_saved_subtitle = str_replace("<", "&lt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace(">", "&gt;", $p_saved_subtitle);
+$p_saved_subtitle = str_replace("\"", "&quot;", $p_saved_subtitle);
 ?>
 
 <head>
